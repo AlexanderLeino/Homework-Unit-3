@@ -11,6 +11,7 @@ Would you like your */
 
 // Assignment Code
 var newArray = []
+var password = ''
 var randomNumber
 var numberOfCharacters
 var choiceLowerCaseLetters
@@ -34,29 +35,34 @@ numberOfCharacters = prompt ('Pick a number between 8-128 and that will represen
   choiceNumbers = confirm('Would you like your password to containe numbers?')
   
   if(choiceUpperCaseLetters) {
-    newArray.concat(upperCaseLetters)
+    newArray = newArray.concat(upperCaseLetters)
   }
   if(choiceLowerCaseLetters){
-  newArray.concat(lowerCaseLetters)
+    newArray = newArray.concat(lowerCaseLetters)
   }
+
   
   if(choiceNumbers) {
-    newArray.concat(numbers)
+    newArray = newArray.concat(numbers)
   }
+  
   if(choiceSpecialCharacters){
-    newArray.concat(specialCharacters)
+    newArray = newArray.concat(specialCharacters)
   }
-  for (i = 0; i < numberOfCharacters; i++){
-  randomNumber = Math.floor(Math.random()* numberOfCharacters + 1)}
+  console.log(newArray)
+for (i = 0; i < numberOfCharacters; i++){
+  randomNumber = Math.floor(Math.random()* numberOfCharacters + 1)
+  
+  password =+ newArray[randomNumber]}
 return password;
 }
 
 
 // Write password to the #password input
 function writePassword() {
-var password = generatePassword()
 var passwordText = document.querySelector("#password");
+generatePassword()
 passwordText.value = password;
 }
 
-generateBtn.addEventListener("click", writePassword();
+generateBtn.addEventListener("click", writePassword)
