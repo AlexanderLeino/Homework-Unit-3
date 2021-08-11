@@ -59,4 +59,4 @@ var passwordText = document.querySelector("#password");
 passwordText.value = password;
 }
 
-generateBtn.addEventListener("click", writePassword()
+generateBtn.addEventListener("click", writePassword();
