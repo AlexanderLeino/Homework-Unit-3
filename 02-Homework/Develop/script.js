@@ -26,10 +26,11 @@ var specialCharacters = ['!', '#', '$', '%', '&', '(', ')', ,'*', '+', ',' ,'-',
 
 function generatePassword() {
 for (i = 0; i < numberOfCharacters; i++){
-randomNumber = Math.floor(Math.random()* numberOfCharacters)
-}
+randomNumber = Math.floor(Math.random()* numberOfCharacters + 1)
 console.log(randomNumber)
-console.log(newArray[randomNumber])
+console.log(newArray)
+}
+
 return password;
 }
 
@@ -55,6 +56,7 @@ function writePassword() {
   if(choiceSpecialCharacters){
     newArray.push(specialCharacters)
   }
+
 }
 var password = generatePassword()
 var passwordText = document.querySelector("#password");
