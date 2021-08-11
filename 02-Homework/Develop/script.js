@@ -25,7 +25,9 @@ var specialCharacters = ['!', '#', '$', '%', '&', '(', ')', ,'*', '+', ',' ,'-',
 
 
 function generatePassword() {
-  numberOfCharacters = prompt ('Pick a number between 8-128 and that will represent how the password you will generate will be.')
+
+
+numberOfCharacters = prompt ('Pick a number between 8-128 and that will represent how the password you will generate will be.')
   choiceUpperCaseLetters = confirm('Would you like your password to contain uppercase letters?')
   choiceLowerCaseLetters = confirm('Would you like your password to contain lowercase letters?')
   choiceSpecialCharacters = confirm('Would you like your password to contain special characters?')
@@ -43,25 +45,18 @@ function generatePassword() {
   }
   if(choiceSpecialCharacters){
     newArray.concat(specialCharacters)
-  
-for (i = 0; i < numberOfCharacters; i++){
-randomNumber = Math.floor(Math.random()* numberOfCharacters + 1)
-console.log(randomNumber)
-console.log(newArray)
-}
-}
-
+  }
+  for (i = 0; i < numberOfCharacters; i++){
+  randomNumber = Math.floor(Math.random()* numberOfCharacters + 1)}
 return password;
 }
 
 
 // Write password to the #password input
 function writePassword() {
-  
 var password = generatePassword()
 var passwordText = document.querySelector("#password");
 passwordText.value = password;
-
-
-generateBtn.addEventListener("click", writePassword());
 }
+
+generateBtn.addEventListener("click", writePassword()
