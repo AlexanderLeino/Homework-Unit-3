@@ -40,20 +40,17 @@ numberOfCharacters = prompt ('Pick a number between 8-128 and that will represen
   if(choiceLowerCaseLetters){
     newArray = newArray.concat(lowerCaseLetters)
   }
-
-  
   if(choiceNumbers) {
     newArray = newArray.concat(numbers)
   }
-  
   if(choiceSpecialCharacters){
     newArray = newArray.concat(specialCharacters)
   }
   console.log(newArray)
 for (i = 0; i < numberOfCharacters; i++){
-  randomNumber = Math.floor(Math.random()* numberOfCharacters + 1)
+  randomNumber = Math.floor(Math.random()* newArray.length)
   
-  password =+ newArray[randomNumber]}
+  password += newArray[randomNumber]}
 return password;
 }
 
