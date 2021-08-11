@@ -18,19 +18,18 @@ var choiceSpecialCharacters
 var choiceUpperCaseLetters
 var choiceNumbers
 var generateBtn =  document.querySelector("#generate");
-var upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-var lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz'
-var numbers = '123456789'  
-var specialCharacters = '!#$%&,()*+,-./:;<=>?@[]^_{}~'
+var upperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+var lowerCaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+var numbers = ['0','1,','2','3', '4', '5', '6', '7', '8', '9']  
+var specialCharacters = ['!', '#', '$', '%', '&', '(', ')', ,'*', '+', ',' ,'-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '{', '}','~']
 
 
 function generatePassword() {
 for (i = 0; i < numberOfCharacters; i++){
-randomNumber = Math.floor(Math.random()* numberOfCharacters + 1)
-console.log(randomNumber)
-console.log(newArray);
-
+randomNumber = Math.floor(Math.random()* numberOfCharacters)
 }
+console.log(randomNumber)
+console.log(newArray[randomNumber])
 return password;
 }
 
@@ -42,12 +41,12 @@ function writePassword() {
   choiceLowerCaseLetters = confirm('Would you like your password to contain lowercase letters?')
   choiceSpecialCharacters = confirm('Would you like your password to contain special characters?')
   choiceNumbers = confirm('Would you like your password to containe numbers?')
-
+  
   if(choiceUpperCaseLetters) {
     newArray.push(upperCaseLetters)
   }
   if(choiceLowerCaseLetters){
-  newArray.push(lowerCaseLetters)
+  {newArray.push(lowerCaseLetters)
   }
   
   if(choiceNumbers) {
@@ -56,8 +55,7 @@ function writePassword() {
   if(choiceSpecialCharacters){
     newArray.push(specialCharacters)
   }
-  
-
+}
 var password = generatePassword()
 var passwordText = document.querySelector("#password");
 passwordText.value = password;
