@@ -25,10 +25,30 @@ var specialCharacters = ['!', '#', '$', '%', '&', '(', ')', ,'*', '+', ',' ,'-',
 
 
 function generatePassword() {
+  numberOfCharacters = prompt ('Pick a number between 8-128 and that will represent how the password you will generate will be.')
+  choiceUpperCaseLetters = confirm('Would you like your password to contain uppercase letters?')
+  choiceLowerCaseLetters = confirm('Would you like your password to contain lowercase letters?')
+  choiceSpecialCharacters = confirm('Would you like your password to contain special characters?')
+  choiceNumbers = confirm('Would you like your password to containe numbers?')
+  
+  if(choiceUpperCaseLetters) {
+    newArray.concat(upperCaseLetters)
+  }
+  if(choiceLowerCaseLetters){
+  newArray.concat(lowerCaseLetters)
+  }
+  
+  if(choiceNumbers) {
+    newArray.concat(numbers)
+  }
+  if(choiceSpecialCharacters){
+    newArray.concat(specialCharacters)
+  
 for (i = 0; i < numberOfCharacters; i++){
 randomNumber = Math.floor(Math.random()* numberOfCharacters + 1)
 console.log(randomNumber)
 console.log(newArray)
+}
 }
 
 return password;
@@ -37,30 +57,11 @@ return password;
 
 // Write password to the #password input
 function writePassword() {
-  numberOfCharacters = prompt ('Pick a number between 8-128 and that will represent how the password you will generate will be.')
-  choiceUpperCaseLetters = confirm('Would you like your password to contain uppercase letters?')
-  choiceLowerCaseLetters = confirm('Would you like your password to contain lowercase letters?')
-  choiceSpecialCharacters = confirm('Would you like your password to contain special characters?')
-  choiceNumbers = confirm('Would you like your password to containe numbers?')
   
-  if(choiceUpperCaseLetters) {
-    newArray.push(upperCaseLetters)
-  }
-  if(choiceLowerCaseLetters){
-  {newArray.push(lowerCaseLetters)
-  }
-  
-  if(choiceNumbers) {
-    newArray.push(numbers)
-  }
-  if(choiceSpecialCharacters){
-    newArray.push(specialCharacters)
-  }
-
-}
 var password = generatePassword()
 var passwordText = document.querySelector("#password");
 passwordText.value = password;
-}
+
 
 generateBtn.addEventListener("click", writePassword());
+}
