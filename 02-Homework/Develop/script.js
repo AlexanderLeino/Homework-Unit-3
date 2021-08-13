@@ -1,13 +1,3 @@
-/* I need to create a password generator that generates a password 25 charactesr long.
-When the user clicks the "generate-password button" get recieves a PROMPT asking if he would like to generate a password. 
-Questions:
-How many characters would you like your password to contain?
-Click okay to CONFIRM incling special characters.
-Numberic Characters?
-Would you like your password to have upperCaseLetters? 
-Would you like your password to have lowerCaseLetters?
-
-Would you like your */
 
 // Assignment Code
 var newArray = []
@@ -26,14 +16,14 @@ var specialCharacters = ['!', '#', '$', '%', '&', '(', ')', ,'*', '+', ',' ,'-',
 
 
 function generatePassword() {
+  do {numberOfCharacters = prompt ('Pick a number between 8-128 and that will represent how the password you will generate will be.')
 
-
-numberOfCharacters = prompt ('Pick a number between 8-128 and that will represent how the password you will generate will be.')
+} while(numberOfCharacters < 8)
   choiceUpperCaseLetters = confirm('Would you like your password to contain uppercase letters?')
   choiceLowerCaseLetters = confirm('Would you like your password to contain lowercase letters?')
   choiceSpecialCharacters = confirm('Would you like your password to contain special characters?')
   choiceNumbers = confirm('Would you like your password to containe numbers?')
-  
+
   if(choiceUpperCaseLetters) {
     newArray = newArray.concat(upperCaseLetters)
   }
