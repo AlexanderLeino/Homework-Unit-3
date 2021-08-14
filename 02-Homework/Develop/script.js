@@ -24,19 +24,19 @@ function generatePassword() {
   choiceSpecialCharacters = confirm('Would you like your password to contain special characters?')
   choiceNumbers = confirm('Would you like your password to containe numbers?')
 
-  if(choiceUpperCaseLetters) {
+  choiceUpperCaseLetters ?
     newArray = newArray.concat(upperCaseLetters)
-  }
-  if(choiceLowerCaseLetters){
+  
+  :choiceLowerCaseLetters ?
     newArray = newArray.concat(lowerCaseLetters)
-  }
-  if(choiceNumbers) {
+  
+  :choiceNumbers ?
     newArray = newArray.concat(numbers)
-  }
-  if(choiceSpecialCharacters){
+  
+  :choiceSpecialCharacters ?
     newArray = newArray.concat(specialCharacters)
-  }
-  console.log(newArray)
+  
+  :console.log(newArray)
 for (i = 0; i < numberOfCharacters; i++){
   randomNumber = Math.floor(Math.random()* newArray.length)
   
