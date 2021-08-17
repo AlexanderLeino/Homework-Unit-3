@@ -33,13 +33,13 @@ function generatePassword() {
   :choiceNumbers ?
     newArray = newArray.concat(numbers)
   
-  :choiceSpecialCharacters ?
+  :choiceSpecialCharacters
     newArray = newArray.concat(specialCharacters)
+
   
-  :console.log(newArray)
 for (i = 0; i < numberOfCharacters; i++){
   randomNumber = Math.floor(Math.random()* newArray.length)
-  
+  console.log(newArray)
   password += newArray[randomNumber]}
 return password;
 }
@@ -47,6 +47,7 @@ return password;
 
 // Write password to the #password input
 function writePassword() {
+  password= ''
 var passwordText = document.querySelector("#password");
 generatePassword()
 passwordText.value = password;
