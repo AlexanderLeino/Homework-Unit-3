@@ -39,7 +39,6 @@ function generatePassword() {
   
 for (i = 0; i < numberOfCharacters; i++){
   randomNumber = Math.floor(Math.random()* newArray.length)
-  console.log(newArray)
   password += newArray[randomNumber]}
 return password;
 }
